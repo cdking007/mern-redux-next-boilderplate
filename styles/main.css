@@ -1,0 +1,337 @@
+/**
+scss boilerplate setup
+*/
+/*
+
+0-600 For mobile
+600-900 for tablet portrait
+900-1200 for tablet landscap mode
+[1200-1800] as our normal
+1800+ big screens
+
+*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #bea7a7;
+  color: white;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+
+.u-margin-top-big {
+  margin-top: 8rem !important;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+.u-text-big {
+  font-size: 3rem !important;
+}
+
+.login {
+  height: 94vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(
+      to top right,
+      rgba(151, 132, 132, 0.4),
+      rgba(190, 167, 167, 0.4)
+    ),
+    url("/img/background.png");
+  background-size: cover;
+}
+@media only screen and (max-width: 37.5em) {
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.login__box {
+  width: 40%;
+  height: 100%;
+  padding: 60px;
+  border-radius: 2px;
+  display: flex;
+}
+@media only screen and (max-width: 37.5em) {
+  .login__box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        to top right,
+        rgba(151, 132, 132, 0.4),
+        rgba(190, 167, 167, 0.4)
+      ),
+      url("/img/background.png");
+    background-position: center;
+  }
+}
+.login__box--center {
+  margin: auto 0;
+}
+
+.input__control {
+  padding: 10px 20px;
+  outline: none;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  color: #a58c8c;
+  border: 0.1px solid rgba(0, 0, 0, 0.4);
+  display: block;
+}
+.input__control + label {
+  padding: 0px 20px;
+  font-size: 1.4rem;
+  opacity: 1;
+  display: block;
+  visibility: visible;
+  transition: all 0.4s ease;
+  color: #605b5f;
+}
+.input__control:placeholder-shown + label {
+  transform: translateY(-30px);
+  visibility: hidden;
+  opacity: 0;
+}
+.input__control::placeholder {
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: bold;
+  color: #bea7a7;
+}
+.input__control--box {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px;
+}
+
+.logo {
+  height: 40%;
+  width: 100%;
+}
+
+.register__now {
+  font-size: 1.4rem;
+  text-align: center;
+  display: block;
+}
+.register__now a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+  padding: 4px;
+  margin: 0px 5px;
+  position: relative;
+  display: inline-block;
+}
+.register__now a:hover {
+  background: #605b5f;
+  transform: rotate(2deg);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  display: inline;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-5px);
+}
+.btn:active {
+  transform: translateY(2px);
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-primary {
+  background-color: #605b5f;
+  color: white;
+  border: 1px solid #605b5f;
+}
+.btn-primary:hover {
+  background-color: #a58c8c;
+}
+
+.main-nav {
+  width: 100%;
+  background: #626064;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.nav-items ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav-items ul li {
+  padding: 0px 10px;
+}
+.nav-items ul li,
+.nav-items ul li a,
+.nav-items ul li button {
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: 300;
+}
+.nav-items ul li:hover,
+.nav-items ul li a:hover,
+.nav-items ul li button:hover {
+  color: antiquewhite;
+  cursor: pointer;
+}
+
+/**
+scss boilerplate setup
+*/
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^="col-"] {
+  float: left;
+}
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 6rem;
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+.row .col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+}
+.row .col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+}
+
+/**
+scss boilerplate setup
+*/
+/**
+scss boilerplate setup
+*/
+/**
+scss boilerplate setup
+*/
+.Toastify__toast {
+  font-size: 1.5rem;
+}
